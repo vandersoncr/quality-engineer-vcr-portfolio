@@ -1,0 +1,187 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #263848;
+  border-radius: 22px;
+  padding: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(97, 231, 178, 0.08), transparent 34%),
+    linear-gradient(145deg, rgba(17, 24, 35, 0.98), rgba(8, 13, 19, 0.99));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.025), transparent 70%);
+}
+
+.topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.signalName {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #afbdca;
+  font-size: 0.8rem;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(97, 231, 178, 0.08), 0 0 12px rgba(97, 231, 178, 0.55);
+}
+
+.experience {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0 20px;
+}
+
+.experience > strong {
+  color: var(--text);
+  font-size: clamp(3rem, 5vw, 4.25rem);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+
+.experience div {
+  display: grid;
+  line-height: 1.25;
+}
+
+.experience span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.experience b {
+  margin-top: 4px;
+  color: #dce5ed;
+  font-size: 0.85rem;
+}
+
+.metrics {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #263542;
+  border-radius: 14px;
+  background: rgba(7, 12, 18, 0.72);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.metric:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 183, 255, 0.48);
+  background: rgba(10, 16, 23, 0.92);
+}
+
+.metricLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: #718196;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+}
+
+.metric strong {
+  display: block;
+  color: var(--accent2);
+  font-size: 1.7rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.metric strong small {
+  color: var(--accent);
+  font-size: 0.9rem;
+  vertical-align: 0.18em;
+}
+
+.metricDescription {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.domains {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 19px;
+  color: #aebbc8;
+}
+
+.domains > svg {
+  flex: none;
+  margin-top: 4px;
+  color: var(--accent);
+}
+
+.domains > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+}
+
+.domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.domain i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.75;
+}
+
+@media (max-width: 520px) {
+  .card { padding: 18px; }
+  .experience { align-items: flex-end; gap: 12px; }
+  .experience > strong { font-size: 3.2rem; }
+  .experience b { font-size: 0.78rem; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric { padding: 14px; }
+  .metric strong { font-size: 1.45rem; }
+}
