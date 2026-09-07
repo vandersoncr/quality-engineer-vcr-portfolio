@@ -79,7 +79,7 @@ export default function Home() {
           </div>
           <div data-testid="experience-years">
             <strong>5</strong>
-            <span>anos em QA / Quality Engineering</span>
+            <span> anos em QA / Quality Engineering</span>
           </div>
           <div className="metric-row">
             <div>
